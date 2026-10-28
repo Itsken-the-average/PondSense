@@ -283,7 +283,7 @@ function alarmsInRange(){const t0=END-state.range*3600000;return alarms.filter(a
 function renderStrip(){
   const sub=view(), got=sub.filter(r=>!r.missing).length, pct=(got/sub.length*100).toFixed(1), al=alarmsInRange();
   const open=al.filter(a=>a.endTs===null).length;
-  $('#strip').innerHTML=`<span>Station <b>Online</b></span><span>Last record <b>${fDT.format(recs[N-1].ts)}</b></span><span>Records received <b>${pct}%</b></span><span>Alarms in range <b>${al.length}</b> (${open} open)</span><span>Sampling <b>10 min (demo)</b></span>`;
+  $('#strip').innerHTML=`<span>Station <b>Online</b></span><span>Last record <b>${fDT.format(recs[N-1].ts)}</b></span><span>Records received <b>${pct}%</b></span><span>Alarms in range <b>${al.length}</b> (${open} open)</span><span>Sampling <b>10 min </b></span>`;
 }
 function dur(ms){const m=Math.round(ms/60000),h=Math.floor(m/60);return h?`${h} h ${String(m%60).padStart(2,'0')} min`:`${m} min`}
 function renderAlarms(){
